@@ -16,14 +16,13 @@ namespace rövarspråket2
         public Form1()
         {
             InitializeComponent();
-            timer1.Start();
         }
 
         bool block = false;
 
         private void main()
         {
-            string str = textBox1.Text;
+            string str = textBox1.Text; // går igenom alla konsonanter och byter ut dem till "bob" varianter
             string result = str;
 
             result = result.Replace("b", "bob");
@@ -52,7 +51,7 @@ namespace rövarspråket2
 
         private void main2()
         {
-            string str = textBox2.Text;
+            string str = textBox2.Text; // gör om rövarspråk till svenska
             string result = str;
 
             result = result.Replace("bob", "b");
@@ -81,7 +80,7 @@ namespace rövarspråket2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (block) return;
+            if (block) return; // gör så att båda fönstrena inte checkar varandra hela tiden
             block = true;
             
             main();
@@ -91,7 +90,7 @@ namespace rövarspråket2
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (block) return;
+            if (block) return; // gör så att båda fönstrena inte checkar varandra hela tiden
             block = true;
 
             main2();
